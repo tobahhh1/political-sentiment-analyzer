@@ -1,0 +1,11 @@
+- subreddit: politics
+  post_sort: 
+    by: hot
+    stop_at:     
+      total_posts: 5
+  select_comments:
+    - sort: confidence
+      stop_at:
+        depth: 1
+        total_comments: 20
+      select_replies: []
