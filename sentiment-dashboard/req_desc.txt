@@ -1,0 +1,10 @@
+# As the developer of the political sentiment analyzer app, I need to fine-tune my prompts until I have one that works well enough for students.
+
+# Needs
+# 1. Easy prompt input to kick off ML pipeline
+# 2. Compare model performance vs. configurable expected by subreddit
+# 3. Pick post CSV or YAML from a static hosted dir
+# 4. Diff other experiments with same CSV / YAML
+
+
+

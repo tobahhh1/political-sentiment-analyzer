@@ -1,0 +1,5 @@
+nav {
+  background-color: purple;
+  display: flex;
+  justify-content: space-between;
+}
