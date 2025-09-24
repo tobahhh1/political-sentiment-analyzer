@@ -1,8 +1,21 @@
 - subreddit: politics
   post_sort: 
-    by: hot
+    by: top
+    time_filter: day
     stop_at:     
-      total_posts: 5
+      total_posts: 100
+  select_comments:
+    - sort: confidence
+      stop_at:
+        depth: 1
+        total_comments: 20
+      select_replies: []
+- subreddit: conservative
+  post_sort:
+    by: top
+    time_filter: day
+    stop_at:
+      total_posts: 100
   select_comments:
     - sort: confidence
       stop_at:

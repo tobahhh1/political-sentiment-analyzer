@@ -1,5 +1,5 @@
 import functools
-from typing import Protocol, Self, Sequence, Callable, TypedDict
+from typing import Protocol, Self, Sequence, Callable, TypedDict, Optional
 
 import torch
 from transformers.configuration_utils import PretrainedConfig
@@ -50,6 +50,6 @@ class TransformersNli(INliModel):
         return outputs.logits
 
     @classmethod
-    def load_from_hf(cls, model_name: str) -> Self:
+    def load_from_hf(cls, model_name: str, max_length: Optional[int] = None) -> Self:
         tokenizer, model = load_huggingface_automodel(model_name)
-        return cls(model, functools.partial(tokenizer, return_tensors="pt", padding=True, truncation=True))
+        return cls(model, functools.partial(tokenizer, return_tensors="pt", max_length=max_length, padding=True, truncation=True))

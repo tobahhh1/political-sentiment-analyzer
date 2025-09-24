@@ -1,6 +1,6 @@
 import torch
 
-def guard_logits(logits: torch.FloatTensor | None):
+def guard_logits(logits: torch.FloatTensor | torch.Tensor | None):
     """Raise an exception if the output logits from an NLI model are incorrect."""
     assert logits is not None, "Invalid nli model: returned logits must not be None"
     assert logits.dim() <= 2 and logits.dim() > 0, "Invalid nli model: returned logits must be a 1D or 2D tensor"

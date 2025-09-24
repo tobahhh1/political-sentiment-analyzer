@@ -24,6 +24,7 @@ def construct_command_args(parser: argparse.ArgumentParser) -> argparse.Argument
     parser_nli_csv.add_argument("--batch_size", type=int, default=1, help="Batch size for NLI model inference")
     parser_nli_csv.add_argument("--hypothesis", type=str, nargs="+", help="Format string to use in hypothesis for NLI. Using {{column}} syntax in the format string like --hypothesis \"value of col1: {{col1}}\" allows substitution of column values for the given row. Passing multiple space-separated strings allows for multiple premises per hypothesis.", required=True)
     parser_nli_csv.add_argument("--premise", type=str, help="Format string to use in premise for NLI. Using {{column}} syntax in the format string like --hypothesis \"value of col1: {{col1}}\" allows substitution of column values for the given row", required=True)
+    parser_nli_csv.add_argument("--max_tokens", type=int, help="Truncate sequences if they contain more than this number of tokens")
 
     subparsers.add_parser(
         "join_parent_row",

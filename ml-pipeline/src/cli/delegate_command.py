@@ -37,7 +37,8 @@ def delegate_command_and_execute(parsed_args: ParsedArgsWithCommand):
             batch_size=nli_args.batch_size,
             hypothesis_formats=nli_args.hypothesis,
             premise_format=nli_args.premise,
-            input_csv=sys.stdin
+            input_csv=sys.stdin,
+            max_tokens=nli_args.max_tokens
         )
         pass
     elif parsed_args.command == "join_parent_row":
